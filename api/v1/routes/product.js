@@ -11,6 +11,10 @@ router.delete('/', (req, res) => {
     res.send('delete request to the product')
 })
 
+router.post('/', function(req, res) {
+    res.send('post request to the product')
+})
+
 
 
 
