@@ -7,6 +7,13 @@ router.get('/', (req, res) => {
 })
 
 
+router.delete('/', (req, res) => {
+    res.send('delete request to the product')
+})
+
+
+
+
 router.get('/:id', (req, res) => {
     const data = {
         msg: 'response',
