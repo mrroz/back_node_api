@@ -21,9 +21,7 @@ router.post('/', (req, res) => {
         member: req.body.member
     }
 
-    my = data["name"] + " => " + data["age"]
     res.status(200).json({
-        m: my,
         person: "hello",
         info: data,
         sec: "okkkkkkkkkkk"
