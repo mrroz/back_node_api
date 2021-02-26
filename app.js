@@ -8,6 +8,7 @@ const productRoutes = require('./api/v1/routes/product')
 ///////////////////////////////////////
 
 app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
 
 app.use('/product', productRoutes)
 

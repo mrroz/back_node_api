@@ -11,8 +11,25 @@ router.delete('/', (req, res) => {
     res.send('delete request to the product')
 })
 
-router.post('/', function(req, res) {
-    res.send('post request to the product')
+router.post('/', (req, res) => {
+    let my
+
+
+    const data = {
+        name: req.body.name,
+        age: req.body.age,
+        member: req.body.member
+    }
+
+    my = data["name"] + " => " + data["age"]
+    res.status(200).json({
+        m: my,
+        person: "hello",
+        info: data,
+        sec: "okkkkkkkkkkk"
+
+    })
+
 })
 
 
