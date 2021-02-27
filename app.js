@@ -1,13 +1,17 @@
 const bodyParser = require('body-parser')
 const express = require('express')
-const { options } = require('./api/v1/routes/product')
 const app = express()
 var cors = require('cors')
-    //////////////////////////////////////////////
-    //////////////////////////////////////
+const mongoose = require('mongoose');
+
+//////////////////////////////////////////////
+//////////////////////////////////////
 const productRoutes = require('./api/v1/routes/product')
 
 ///////////////////////////////////////
+mongoose.connect('mongodb://localhost:27017/rest-api', { useNewUrlParser: true, useUnifiedTopology: true });
+
+///////////////////////
 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
@@ -25,7 +29,7 @@ app.use(cors())
 
 
 
-app.use('/product', productRoutes)
+app.use('/api/v1/product', productRoutes)
 
 
 
