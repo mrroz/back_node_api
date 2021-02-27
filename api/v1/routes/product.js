@@ -16,22 +16,18 @@ router.post('/', (req, res) => {
         price: req.body.price,
         member: req.body.member
     })
-
     product.save()
-
-    .then((result) => {
-        res.status(200).json({
-            msg: "created!",
-            result: result
-        })
-
-
-    }).catch((err) => {
-        res.status(500).json({
-            msg: "error",
-            err: err
-        })
-    });
+        .then((result) => {
+            res.status(200).json({
+                msg: "created!",
+                result: result
+            })
+        }).catch((err) => {
+            res.status(500).json({
+                msg: "error",
+                err: err
+            })
+        });
 
 })
 
