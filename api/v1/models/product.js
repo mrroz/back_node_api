@@ -13,6 +13,11 @@ const productSchema = mongoose.Schema({
     member: {
         type: Boolean,
         required: true
+    },
+
+    random: {
+        type: Number,
+
     }
 })
 
