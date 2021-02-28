@@ -1,17 +1,30 @@
 const express = require('express')
 const router = express.Router()
 const Product = require('../models/product')
-    /////////////////////////////////////////
+const multer = require('multer');
+
+const storage = multer.diskStorage({
+    destination: function(req, file, cb) {
+        cb(null, './uploads');
+    },
+    filename: function(req, file, cb) {
+        cb(null, file.originalname);
+    }
+});
+const uploadImg = multer({ storage: storage }).single('image');
+
+/////////////////////////////////////////
 
 
 
 
 
-router.post('/', (req, res) => {
+router.post('/', uploadImg, (req, res) => {
     const product = new Product({
         title: req.body.title,
         price: req.body.price,
         member: req.body.member,
+        image: req.file.path,
         random: Math.floor(Math.random() * Math.floor(99))
     })
     product.save()

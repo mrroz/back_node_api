@@ -12,7 +12,7 @@ const productRoutes = require('./api/v1/routes/product')
 mongoose.connect('mongodb://localhost:27017/rest-api', { useNewUrlParser: true, useUnifiedTopology: true });
 
 ///////////////////////
-
+app.use('/uploads', express.static('public'))
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 

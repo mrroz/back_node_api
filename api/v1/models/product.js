@@ -18,6 +18,10 @@ const productSchema = mongoose.Schema({
     random: {
         type: Number,
 
+    },
+    image: {
+        type: String,
+        required: false
     }
 })
 
