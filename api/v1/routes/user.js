@@ -5,9 +5,10 @@ const userControllers = require('../controllers/usercontroller')
 const router = express.Router()
 
 
-router.post('/singup', userControllers.save)
+router.post('/singup', userControllers.singup)
+router.post('/login', userControllers.login)
 
-router.get('/hi', userControllers.hi)
+router.get('/all', userControllers.allUser)
 
 
 module.exports = router
