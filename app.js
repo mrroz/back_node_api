@@ -7,6 +7,7 @@ const mongoose = require('mongoose');
 //////////////////////////////////////////////
 //////////////////////////////////////
 const productRoutes = require('./api/v1/routes/product')
+const userRoutes = require('./api/v1/routes/user')
 
 ///////////////////////////////////////
 mongoose.connect('mongodb://localhost:27017/rest-api', { useNewUrlParser: true, useUnifiedTopology: true });
@@ -30,6 +31,7 @@ app.use(cors())
 
 
 app.use('/api/v1/product', productRoutes)
+app.use('/api/v1/user', userRoutes)
 
 
 
