@@ -58,6 +58,7 @@ module.exports.login = (req, res) => {
             } else {
 
                 console.log(result[0].email);
+
                 bcrypt.compare(password, result[0].password, (err, result) => {
 
                     if (err) {
