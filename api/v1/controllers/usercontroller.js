@@ -33,9 +33,9 @@ module.exports.save = (req, res) => {
                         })
                         User.save()
                             .then((result) => {
-                                res.json({ ok_in_sava: result })
+                                res.json({ ok_in_save: result })
                             }).catch((err) => {
-                                res.json({ err_in_sava: err })
+                                res.json({ err_in_save: err })
                             });
 
 
